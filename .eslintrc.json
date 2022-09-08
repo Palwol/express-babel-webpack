@@ -1,3 +1,7 @@
+/**
+eslint 설정 참고 : https://poiemaweb.com/eslint
+*/
+
 {
   "parserOptions": {
     "ecmaVersion": "latest"

@@ -8,7 +8,8 @@ node.js express, babel, webpack boilerplate입니다.
 - stylesheet : SCSS / SASS
 - view-file : HTML
 - webpack plugins : HtmlWebpackPlugin, MiniCssExtractPlugin
-- linter : eslint + prettier
+- linter : eslint - airbnb convention base
+  - 설정 참고 : [poiemaweb-eslint](https://poiemaweb.com/eslint)
 - express middleware : webpackDevMiddleware
 
 ## 폴더 구조
