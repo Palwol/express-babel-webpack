@@ -53,7 +53,7 @@ node.js express, babel, webpack boilerplate입니다.
 - src 폴더의 파일들이 build되며, build 결과물은 public 폴더에 생성됩니다.
 - 생성되는 build 결과물 이름은 다음과 같습니다.
 
-```bash
+```text
 [name].js -> [name].bundle.js
 [name].scss -> css/[name].style.css
 [name].html -> [name].html
