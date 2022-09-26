@@ -17,23 +17,20 @@ node.js express, babel, webpack boilerplate입니다.
 ```bash
 .
 ├── README.md
-├── babel.config.json
+├── client
+│   ├── babel.config.json
+│   ├── package.json
+│   ├── public
+│   ├── src
+│   │   ├── index.html
+│   │   ├── index.js
+│   │   └── styles
+│   │       └── global.scss
+│   └── webpack.config.js
 ├── package.json
-├── public
-│   ├── main.bundle.js
-│   ├── main.bundle.js.map
-│   ├── css
-│   │   ├── main.style.css
-│   │   └── main.style.css.map
-│   └── index.html
-├── server
-│   └── app.js
-├── src
-│   ├── index.html
-│   ├── main.js
-│   └── scss
-│       └── style.scss
-└── webpack.config.js
+└── server
+    ├── app.js
+    └── package.json
 ```
 
 ## 실행방법
