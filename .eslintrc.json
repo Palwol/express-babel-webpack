@@ -1,7 +1,3 @@
-/**
-eslint 설정 참고 : https://poiemaweb.com/eslint
-*/
-
 {
   "parserOptions": {
     "ecmaVersion": "latest"
@@ -15,7 +11,7 @@ eslint 설정 참고 : https://poiemaweb.com/eslint
   "extends": ["airbnb-base", "prettier"],
   "plugins": ["import", "html"],
   "rules": {
-    "no-console": "warn",
+    "no-console": "off",
     "no-plusplus": "off",
     "no-shadow": "off",
     "vars-on-top": "off",
@@ -29,7 +25,7 @@ eslint 설정 참고 : https://poiemaweb.com/eslint
     "no-restricted-syntax": ["off", "ForOfStatement"],
     "prefer-arrow-callback": "error",
     "require-await": "error",
-    "arrow-parens": ["error", "as-needed"],
+    "arrow-parens": "off",
     "no-param-reassign": ["error", { "props": false }],
     "no-unused-expressions": [
       "error",
@@ -39,6 +35,12 @@ eslint 설정 참고 : https://poiemaweb.com/eslint
         "allowTaggedTemplates": true
       }
     ],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "lines-between-class-members": "off",
+    "class-methods-use-this": "off",
+    "no-new": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "warn",
+    "prefer-destructuring": "warn"
   }
 }

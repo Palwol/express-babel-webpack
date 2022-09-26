@@ -1,29 +1,17 @@
-const express = require('express');
-const path = require('path');
-const logger = require('morgan');
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import path from 'path';
 
 const app = express();
 
-// webpack middleware 설정
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('../webpack.config');
-
-const compiler = webpack(webpackConfig);
-
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cookieParser());
 app.use(logger('dev'));
 
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-  })
-);
-
 // static 파일 설정
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve('../client/public')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
-app.listen(3000);
+app.set('port', process.env.PORT || 3000);
+app.listen(app.get('port'), () => console.log('http://localhost:3000'));

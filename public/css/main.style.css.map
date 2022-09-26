@@ -1,1 +1,0 @@
-{"version":3,"file":"css/main.style.css","mappings":";;;AAAA;EACE,aAAa;EACb,wDAAwD;EACxD,cAAc","sources":["webpack://airbnb/./src/scss/style.scss"],"sourcesContent":["body {\n  padding: 50px;\n  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;\n  color: #00b7ff;\n}\n"],"names":[],"sourceRoot":""}

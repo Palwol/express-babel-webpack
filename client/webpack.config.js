@@ -1,14 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
 
 module.exports = {
   mode: 'development', // 개발모드
-  entry: ['./src/main.js', './src/scss/style.scss'], // 빌드 시작점
+  entry: { index: './src/index.js' }, // 빌드 시작점
   output: {
-    path: path.resolve(__dirname, 'public'), // 빌드 결과파일이 위치할 폴더
+    path: path.resolve('./public'), // 빌드 결과파일이 위치할 폴더
     filename: '[name].bundle.js', // 빌드 결과파일 이름
-    publicPath: 'http://localhost:3000/public', // 브라우저단에서의 prefix
+    assetModuleFilename: '[name][ext]?[hash]',
   },
   devtool: 'source-map', // 개발자도구에 원본 소스 제공
   module: {
@@ -22,6 +22,13 @@ module.exports = {
         test: /\.s[ac]ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(svg|png)$/,
+        type: 'asset/resource',
+        generator: {
+          outputPath: 'images',
+        },
+      },
     ],
   },
   plugins: [
@@ -31,7 +38,12 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].style.css',
-      chunkFilename: 'css/[name].style.css',
     }),
   ],
+  resolve: {
+    alias: {
+      '@images': path.resolve(__dirname, './src/images/'),
+      '@styles': path.resolve(__dirname, './src/styles/'),
+    },
+  },
 };
